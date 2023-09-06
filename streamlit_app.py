@@ -23,8 +23,12 @@ stl.dataframe(fruits_to_show)
 # New Section to display fruityvice api response
 stl.header('Fruityvice Fruit Advice!')
 
+fruit_choice = stl.text_input('What fruit would you like information about?','Kiwi')
+stl.write('The user entered ', fruit_choice)
+
+
 import requests
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
 #stl.text(fruityvice_response.json()) #just writes the data to the screen.
 
 #normalize the json version of response
