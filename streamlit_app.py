@@ -14,3 +14,6 @@ my_fruit_list = pd.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/da
 stl.dataframe(my_fruit_list)
 
 # Let's put a pick list here so they can pick the fruit they want to include 
+stl.multiselect("Pick some fruits:", list(my_fruit_list.index))
+
+# Display the table on the page.
