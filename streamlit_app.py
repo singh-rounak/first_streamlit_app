@@ -17,3 +17,4 @@ stl.dataframe(my_fruit_list)
 stl.multiselect("Pick some fruits:", list(my_fruit_list.index))
 
 # Display the table on the page.
+stl.dataframe(my_fruit_list)
