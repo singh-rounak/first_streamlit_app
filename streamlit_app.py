@@ -82,7 +82,7 @@ def insert_row_in_snowflake(new_fruit):
 add_my_fruit = stl.text_input("What fruit would you like to add?")
 if stl.button('Add a fruit to the list'):
 	my_cnx = snowflake.connector.connect(**stl.secrets["snowflake"])
-	function_out2 = insert_row_snowflake(add_my_fruit)
+	function_out2 = insert_row_in_snowflake(add_my_fruit)
 	stl.text(function_out2)
 stl.write("Thanks for adding",add_my_fruit)
 
