@@ -49,7 +49,9 @@ try:
 except URLError as e:
 	stl.error()
 #don't run anything past here while we troubleshoot
-stl.stop()
+
+
+#stl.stop()
 
 
 
