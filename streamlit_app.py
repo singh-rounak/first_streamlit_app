@@ -33,6 +33,8 @@ def get_fruityvice_data(this_fruit_choice):
 	return fruityvice_normalized
 
 
+	 #Output of normalization
+
 # New Section to display fruityvice api response
 stl.header('Fruityvice Fruit Advice!')
 try:
@@ -43,7 +45,7 @@ try:
 		function_output =  get_fruityvice_data(fruit_choice)
 		stl.dataframe(function_output)
 
-		
+
 except URLError as e:
 	stl.error()
 #don't run anything past here while we troubleshoot
@@ -57,13 +59,17 @@ stl.stop()
 # my_data_row = my_cur.fetchone()
 # stl.text("Hello from Snowflake:")
 # stl.text(my_data_row)
-
-my_cnx = snowflake.connector.connect(**stl.secrets["snowflake"])
-my_cur = my_cnx.cursor()
-my_cur.execute("select * from fruit_load_list")
-my_data_rows = my_cur.fetchall()
 stl.header("The fruit load list contains:")
-stl.dataframe(my_data_rows) #To display in table format
+def get_fruit_load_list():
+	with my_cnx.cursor() as my_cur:
+		my_cur.execute("select * from fruit_load_list")
+		return my_cur.fetchall()
+
+#Add a button to load the fruit:
+if stl.button('Get Fruit Load List'):
+	my_cnx = snowflake.connector.connect(**stl.secrets["snowflake"])
+	my_data_rows = get_fruit_load_list()
+	stl.dataframe(my_data_rows) #To display in table format
 
 #Allow the user to add a new fruit to the existing list
 add_my_fruit = stl.text_input("What fruit would you like to add?",'')
