@@ -57,3 +57,5 @@ stl.dataframe(my_data_rows) #To display in table format
 add_my_fruit = stl.text_input("What fruit would you like to add?",'')
 stl.write("Thanks for adding",add_my_fruit)
 
+my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+
