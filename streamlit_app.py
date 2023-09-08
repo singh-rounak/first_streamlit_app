@@ -51,4 +51,4 @@ my_cur = my_cnx.cursor()
 my_cur.execute("select * from fruit_load_list")
 my_data_row = my_cur.fetchone()
 stl.header("The fruit load list contains:")
-stl.dataframe(my_data_row)
+stl.dataframe(my_data_row) #To display in table format
