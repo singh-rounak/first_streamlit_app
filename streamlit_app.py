@@ -48,7 +48,7 @@ import snowflake.connector
 
 my_cnx = snowflake.connector.connect(**stl.secrets["snowflake"])
 my_cur = my_cnx.cursor()
-my_cur.execute("SELECT * from fruit_load_list")
+my_cur.execute("select * from fruit_load_list")
 my_data_row = my_cur.fetchone()
 stl.text("The fruit load list contains:")
 stl.text(my_data_row)
