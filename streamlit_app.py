@@ -55,5 +55,5 @@ stl.dataframe(my_data_rows) #To display in table format
 
 #Allow the user to add a new fruit to the existing list
 add_my_fruit = stl.text_input("What fruit would you like to add?",'')
-stl.text("Thanks for adding",add_my_fruit)
+stl.write("Thanks for adding",add_my_fruit)
 
